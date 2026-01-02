@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fooocus AI : Free AI Text to Image Generator</title>
+    <meta name="description" content="Generate images from text using Fooocus AI with easy setup, balanced styles, and predictable output quality.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-bolt"></i> Fooocus AI
+        </div>
+        <button class="menu-toggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#playground">Generator</a>
+            <a href="#features">Features</a>
+            <a href="#how-to-use">How it Works</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#faq">FAQ</a>
+            <!-- Mobile CTA inside nav -->
+            <a href="#playground" class="btn btn-primary mobile-cta">Generate</a>
+        </nav>
+        <a href="#playground" class="btn btn-primary desktop-cta">Generate</a>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <!-- Layer 1: Background Image -->
+            <div class="hero-bg-image">
+                <img src="images/hero-bg.jpg" alt="Futuristic abstract digital landscape">
+            </div>
+            
+            <!-- Layer 2: Animation Overlay -->
+            <div class="hero-bg-animation">
+                <div class="scan-line"></div>
+            </div>
+            
+            <!-- Layer 3: Dark Overlay -->
+            <div class="hero-overlay"></div>
+            
+            <!-- Layer 4: Content -->
+            <div class="hero-content fade-in-up">
+                <h1>Generate Stunning Images With Fooocus AI</h1>
+                <p>Fooocus AI is designed to focus on image quality. It turns text prompts into clean, well-balanced images with stable styles and minimal setup.</p>
+                <div class="hero-buttons">
+                    <a href="#playground" class="btn btn-primary">Generate</a>
+                    <a href="#how-to-use" class="btn btn-secondary">How It Works</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Playground Section -->
+        <section id="playground">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>Fooocus AI Image Generator</h2>
+                    <p>Fooocus AI transforms text prompts into detailed images while maintaining structure, style consistency, and predictable visual output.</p>
+                </div>
+                
+                <div class="playground-grid">
+                    <!-- Left: Upload/Input Panel -->
+                    <div class="playground-panel upload-panel fade-in-left">
+                        <h4>Input Image</h4>
+                        <div class="upload-zone" id="upload-zone">
+                            <input type="file" id="file-input" accept="image/*" hidden>
+                            <div class="upload-placeholder">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                <p>Drag & drop or click to upload</p>
+                                <span>PNG, JPG up to 10MB</span>
+                            </div>
+                            <img id="preview-image" class="hidden" alt="Preview">
+                        </div>
+                        <div class="playground-actions">
+                            <button class="btn btn-primary" id="generate-btn" disabled>Generate</button>
+                            <button class="btn btn-secondary" id="reset-btn">Reset</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Result Panel -->
+                    <div class="playground-panel result-panel fade-in-right">
+                        <h4>Result</h4>
+                        <div class="result-display" id="result-container">
+                            <div class="result-placeholder" id="result-placeholder">
+                                <i class="fa-solid fa-image"></i>
+                                <p>Result will appear here</p>
+                            </div>
+                            <div class="loading-overlay hidden" id="loading-state">
+                                <div class="loading-spinner"></div>
+                                <p id="loading-text">Processing...</p>
+                            </div>
+                            <img id="result-image" class="hidden" alt="Result">
+                        </div>
+                        <div class="playground-actions">
+                            <button class="btn btn-primary" id="download-btn" disabled>Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features (Why Use) Section -->
+        <section id="features">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>Why You’ll Love Our Fooocus AI</h2>
+                    <p>Discover the features that make our tool the best choice for your creative needs.</p>
+                </div>
+                
+                <div class="features-grid bento-grid">
+                    <div class="feature-card fade-in-up">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3>Free to Use</h3>
+                        <p>Access all our features completely free of charge. There are no hidden fees, just unlimited creativity with zero restrictions.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in-up" style="transition-delay: 0.1s;">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3>User-Friendly Interface</h3>
+                        <p>Our simple, intuitive design makes the Fooocus AI tool accessible and easy for everyone to use, even without prior technical experience.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3>Secure Fooocus AI</h3>
+                        <p>Your privacy is our highest priority. Every image is processed safely, guaranteeing your data remains confidential and is never shared.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in-up" style="transition-delay: 0.3s;">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-image"></i>
+                        </div>
+                        <h3>High-Quality Outputs</h3>
+                        <p>Enjoy professional-grade results with exceptional clarity, detail, and color accuracy in every AI-generated output.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-to-use">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>How to Use Fooocus AI</h2>
+                    <p>Create amazing visuals in three simple steps.</p>
+                </div>
+                
+                <div class="steps-grid">
+                    <div class="step-card fade-in-up">
+                        <div class="step-icon">
+                            <i class="fa-solid fa-pen-nib"></i>
+                        </div>
+                        <h3>Describe Your Vision</h3>
+                        <p>Simply type a few words or a sentence describing the image you have in mind. The more detail you add, the closer our AI can get to your idea!</p>
+                    </div>
+                    
+                    <div class="step-card fade-in-up" style="transition-delay: 0.1s;">
+                        <div class="step-icon">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3>Watch the Magic Happen</h3>
+                        <p>Click the 'Generate' button and our creative AI will get to work. It will interpret your words and craft a beautiful, one-of-a-kind image just for you.</p>
+                    </div>
+                    
+                    <div class="step-card fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="step-icon">
+                            <i class="fa-solid fa-download"></i>
+                        </div>
+                        <h3>Save Your Creation</h3>
+                        <p>Love what you see? You can easily download your new artwork to your device to keep, use, or share with friends and family.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>Visual Archive</h2>
+                    <p>Explore what's possible with Fooocus AI.</p>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item fade-in-up">
+                        <img src="images/gallery-result-1.jpg" alt="Photorealistic close-up portrait of a female cyborg">
+                        <div class="gallery-overlay">
+                            <span>Portrait</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in-up" style="transition-delay: 0.1s;">
+                        <img src="images/gallery-result-2.jpg" alt="Cinematic shot of a neon-lit futuristic city street">
+                        <div class="gallery-overlay">
+                            <span>Cyberpunk</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in-up" style="transition-delay: 0.2s;">
+                        <img src="images/gallery-result-3.jpg" alt="Digital art illustration of a floating island">
+                        <div class="gallery-overlay">
+                            <span>Fantasy</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item fade-in-up" style="transition-delay: 0.3s;">
+                        <img src="images/gallery-result-4.jpg" alt="Detailed macro photography of a mechanical eye">
+                        <div class="gallery-overlay">
+                            <span>Macro</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>What People Say about us</h2>
+                    <p>Hear from creators who have transformed their workflow.</p>
+                </div>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card fade-in-up">
+                        <p class="testimonial-quote">Fooocus AI has completely changed my creative workflow. The quality of the images is just stunning, and it's so easy to get started.</p>
+                        <div class="testimonial-author">
+                            <img src="images/avatar-mia.jpg" alt="Mia" class="testimonial-avatar">
+                            <div class="author-info">
+                                <span class="testimonial-name">Mia</span>
+                                <span class="testimonial-designation">Digital Artist</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card fade-in-up" style="transition-delay: 0.1s;">
+                        <p class="testimonial-quote">I was looking for a simple AI image tool and found this gem. It's surprisingly powerful, and the Foocus AI version is a game-changer for getting those perfect details.</p>
+                        <div class="testimonial-author">
+                            <img src="images/avatar-ethan.jpg" alt="Ethan" class="testimonial-avatar">
+                            <div class="author-info">
+                                <span class="testimonial-name">Ethan</span>
+                                <span class="testimonial-designation">Web user from USA</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card fade-in-up" style="transition-delay: 0.2s;">
+                        <p class="testimonial-quote">As a content creator, speed is everything. Fooocus AI lets me generate amazing visuals in seconds, saving me hours of work.</p>
+                        <div class="testimonial-author">
+                            <img src="images/avatar-charlotte.jpg" alt="Charlotte" class="testimonial-avatar">
+                            <div class="author-info">
+                                <span class="testimonial-name">Charlotte</span>
+                                <span class="testimonial-designation">Content Creator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Common questions about our technology and process.</p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item fade-in-up">
+                        <button class="faq-question">
+                            What exactly is Fooocus AI?
+                            <i class="fa-solid fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-content">
+                                Fooocus AI is an tool that helps you create best-looking images using AI. You can type a short description to create a new image or apply the Fooocus style to your photo to give it a clean, artistic look.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in-up">
+                        <button class="faq-question">
+                            Is Fooocus AI free to use?
+                            <i class="fa-solid fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-content">
+                                Yes, you can use Fooocus AI for free. We offer free access so you can try the image effect and create images without paying. Extra features may be added later, but a free option is always available.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in-up">
+                        <button class="faq-question">
+                            How long does it take to create an image?
+                            <i class="fa-solid fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-content">
+                                It usually takes only a few seconds. Sometimes it may take a little longer if many people are using it, but most images are ready very quickly.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in-up">
+                        <button class="faq-question">
+                            What about my privacy? Are my images safe?
+                            <i class="fa-solid fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-content">
+                                Yes, your images are safe. Your photos are used only to create your image effect and are not shared with anyone. They are stored for a short time and then removed.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in-up">
+                        <button class="faq-question">
+                            Can I make changes or try different versions of the same image?
+                            <i class="fa-solid fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-content">
+                                Yes, you can easily try again or change your text to get a new version. This helps you explore different looks without starting over.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-in-up">
+                        <button class="faq-question">
+                            Do I need to download anything to use Fooocus AI?
+                            <i class="fa-solid fa-plus faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-content">
+                                No download is needed. Fooocus AI works directly in your web browser. Just open the page, upload a photo or type a prompt, and start creating.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i class="fa-solid fa-bolt"></i> Fooocus AI
+                    </div>
+                    <p>High-quality text-to-image and image-to-image transformation for creators.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Product</h4>
+                        <a href="#playground">Generator</a>
+                        <a href="#features">Features</a>
+                        <a href="#gallery">Gallery</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <a href="#how-to-use">How it Works</a>
+                        <a href="#faq">FAQ</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <button data-modal-target="privacy-modal">Privacy Policy</button>
+                        <button data-modal-target="terms-modal">Terms of Service</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fooocus AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Privacy Modal -->
+    <div id="privacy-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Privacy Policy</h3>
+                <button class="close-modal" data-modal-close="privacy-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Last Updated:</strong> 2024</p>
+
+                <h4>1. Data Collection</h4>
+                <p>We collect only the minimum data necessary:</p>
+                <ul>
+                  <li>Images you upload for processing (temporarily stored)</li>
+                  <li>Basic usage analytics (non-personal)</li>
+                  <li>Browser type and device information</li>
+                </ul>
+
+                <h4>2. Image Processing</h4>
+                <p>Your uploaded images are:</p>
+                <ul>
+                  <li>Processed securely on our servers</li>
+                  <li>Automatically deleted within 24 hours</li>
+                  <li>Never shared with third parties</li>
+                  <li>Not used for AI training without consent</li>
+                </ul>
+
+                <h4>3. Data Security</h4>
+                <p>All data transmission is encrypted using SSL/TLS protocols.</p>
+
+                <h4>4. Cookies</h4>
+                <p>We use essential cookies only for site functionality.</p>
+
+                <h4>5. Your Rights</h4>
+                <p>You have the right to request deletion of any stored data.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div id="terms-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Terms of Service</h3>
+                <button class="close-modal" data-modal-close="terms-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Last Updated:</strong> 2024</p>
+
+                <h4>1. Acceptance of Terms</h4>
+                <p>By using this service, you agree to these Terms.</p>
+
+                <h4>2. Service Description</h4>
+                <p>This service provides AI-powered image transformation. Provided "as-is" without warranties.</p>
+
+                <h4>3. Acceptable Use</h4>
+                <p>You agree NOT to upload:</p>
+                <ul>
+                  <li>Illegal or unlawful content</li>
+                  <li>Explicit, pornographic, or obscene material</li>
+                  <li>Content depicting violence or harm</li>
+                  <li>Images you do not have rights to use</li>
+                </ul>
+
+                <h4>4. Intellectual Property</h4>
+                <p>You retain full ownership of your original images. Generated effects are royalty-free for personal and commercial use.</p>
+
+                <h4>5. Limitation of Liability</h4>
+                <p>We are not liable for any damages arising from the use of this service.</p>
+
+                <h4>6. Modifications</h4>
+                <p>We may update these terms at any time. Continued use constitutes acceptance.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
